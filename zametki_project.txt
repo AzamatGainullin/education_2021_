@@ -1,0 +1,103 @@
+http://digitalocean.com/  - можно арендовать веб-сервер
+http://pythontutor.com/visualize.html#mode=edit
+
+
+Ищем в текущей директории все файлы питона, содержащие данное слово/переменную "models":
+$ grep -rin --include="*.py" "models"
+
+
+
+
+echo $SHELL - видим что за командная оболочка на сервере, консоль. у меня bash.
+
+cat /etc/shells - список оболочек выводится.
+
+
+Командная строка:
+PS1="board@server:~$ " - было
+PS1="\e[0;32mboard@server:~$ \e[m" - стало
+
+nano ~/.bashrc
+
+
+Настройка сервера Убунту:
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04-ru
+https://goto-linux.com/2019/12/5/%D0%BA%D0%B0%D0%BA-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D1%8B-ubuntu-%D0%B2-ubuntu-20.04-focal-fossa-linux/
+
+
+
+'/home/sammy/.local/bin'
+export PATH="$home/sammy/.local/bin:$PATH"
+https://andreyex.ru/operacionnaya-sistema-linux/kak-dobavit-katalog-v-path-v-linux/
+https://losst.ru/peremennaya-path-v-linux
+
+
+
+
+
+https://timeweb.com/ru/community/articles/kak-ustanovit-git-na-debian-10-1
+
+
+настройка файрволлов для юпитера
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04
+
+
+Настраиваем Юпитер удаленный:
+https://www.digitalocean.com/community/tutorials/how-to-install-run-connect-to-jupyter-notebook-on-remote-server-ru
+
+
+
+
+ПОРЯДОК ДЕЙСТВИЙ:
+ssh -L 8000:localhost:8888 
+conda activate nlpiaenv
+jupyter notebook
+
+ПЕРЕДАЧА ФАЙЛОВ С ЛОКАЛЬНОГО КОМПА НА СЕРВЕР
+
+
+
+
+killall -u sammy - убить все процессы пользователя sammy от пользователя root
+
+ЧТОБЫ ОТКЛЮЧАТЬСЯ ОТ СЕРВЕРА, А ПРОГРАММА ПРОДОЛЖИТ РАБОТАТЬ:
+https://www.hostinger.ru/rukovodstva/kak-ustanovit-screen-linux
+
+agile(scrum, kunban)
+
+
+rm -rf .git* - удаляет отслеживание и вообще проект гит из папки. нужно применять, если клонировали копию папки с репозитория, потому что уже 2 папки с гитом.
+
+
+
+ЗАПУСК ВЕБ-СЕРВЕРА (САЙТА) С ПОМОЩЬЮ ГУНИКОРН:
+
+Но чтобы работало во внешний мир, открыть порт например 5000 командой:
+sudo ufw allow 5000
+sudo netstat -plant | grep 5000  - этой командой можно узнать, кто занял порт 5000 на данный момент, какой процесс
+Публично доступный сервер
+
+Если вы запустите сервер, вы заметите, что он доступен только с вашего собственного компьютера, а не с какого-либо другого в сети. Так сделано по умолчанию, потому что в режиме отладки пользователь приложения может выполнить код на Python на вашем компьютере.
+Если у вас отключена опция debug или вы доверяете пользователям в сети, вы можете сделать сервер публично доступным, просто изменив вызов метода run() таким вот образом:
+
+app.run(host='0.0.0.0')
+Это укажет вашей операционной системе, чтобы она слушала сеть со всех публичных IP-адресов.
+
+
+
+
+
+
+Оказывается, на Debian документация советует установить gunicorn через apt:
+$ sudo apt install gunicorn
+И настройка system.md файлов разьясняется на https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04-ru
+После покупки доменного имени на руцентре настраиваем доменные ДНС и т.д.
+https://www.youtube.com/watch?v=iz4623hh3h0
+Обязательно выполнить последний пункт! Сертификаты... Апачи нипричем...:
+sudo certbot --nginx -d commentskernel.space -d www.commentskernel.space
+
+
+
+
+Улучшение кода
+https://itnan.ru/post.php?c=1&p=521602

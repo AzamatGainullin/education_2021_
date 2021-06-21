@@ -1,0 +1,27 @@
+Начало работы с гитом:
+sudo apt-get install git
+git config --global user.name "Azamat"
+git config --global user.email rtf2@mail.ru
+git init - уже в папке проекта
+
+git add . - добавляем все файлы папки для отслеживания
+git status - смотрим что отслеживается по изменениям
+git commit -m "Initial commit"
+
+
+git diff - показывает внесенные изменения
+
+
+потом на сайте гитхаба создать репозиторий, и:
+git remote add origin https://github.com/AzamatGainullin/...
+git branch -M main
+git push -u origin main
+
+Дальше консоль запросит логин/пароль, и все. Отправит данные сервер.
+Далее можно просто обновлять папку с сервером
+
+git add .
+git commit -m "commit..."
+git push
+
+по мере необходимости, и все.
