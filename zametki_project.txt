@@ -5,7 +5,7 @@ http://pythontutor.com/visualize.html#mode=edit
 Ищем в текущей директории все файлы питона, содержащие данное слово/переменную "models":
 $ grep -rin --include="*.py" "models"
 
-
+scp /home/board/Загрузки/test_citilink.7z sammy@138.201.200.157:/home/sammy/
 
 
 echo $SHELL - видим что за командная оболочка на сервере, консоль. у меня bash.
@@ -85,9 +85,6 @@ app.run(host='0.0.0.0')
 
 
 
-
-
-
 Оказывается, на Debian документация советует установить gunicorn через apt:
 $ sudo apt install gunicorn
 И настройка system.md файлов разьясняется на https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04-ru
@@ -115,3 +112,6 @@ for num in range(1, 101):
     if not val:
         val = str(num)
         print(val)
+
+
+update collab set text = regexp_replace(text, '}', '') where url > 5903; - замена в текстовом поле БД Postgresql

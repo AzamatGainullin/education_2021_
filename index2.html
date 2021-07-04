@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Анализ комментариев сети</title>
+  <style>
+   .column {
+    -webkit-column-width: 300px;
+    -moz-column-width: 300px;
+    column-width: 300px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    -webkit-column-rule: 1px solid #ccc;
+    -moz-column-rule: 1px solid #ccc;
+    column-rule: 1px solid #ccc;
+   }
+       #myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 40%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+       #myInput2 {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 40%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+  </style>
+ </head>
+ <body>
+  <div style="float: left; width: 49%;"><h2>Проект в сфере компьютерной обработки естественного языка</h2><p style="font-size:120%;">
+
+Данный ресурс является началом проекта по интеллектуальному анализу текстов, комментариев, твитов и постов в интернете на основе машинного обучения.<br>
+Первой тематикой проекта выбрана оправданность комментариев, ожиданий частных инвесторов в отношении капитализации компании, ее роста и будущего положения на рынке. В качестве целевой компании выбран Сбер как один из наиболее обсуждаемых бизнесов на просторах Рунета.<br>
+<br>
+Нейросетевой алгоритм сервера, изучив комментарии пользователей интернет-форумов за последние несколько лет, нашел для себя оптимальный способ определять связь между двумя показателями:<br>
+ - настрой, тональность обсуждений Сбера в ожидании роста или падения капитализации;<br>
+ - фактическое изменение капитализации Сбера в среднесрочной перспективе.<br>
+<br>
+Таблица показывает ежедневную работу алгоритма за последний месяц, где в динамическом режиме обновляется превалирующая суть обсуждений (kernel - суть, ядро):<br>
+
+<br>
+- 0 - все плохо, Сбер будет ухудшать свои позиции на рынке;<br>
+- 1 - ситуация выжидательной неопределенности;<br>
+- 2 - надо инвестировать, Сбер нешуточно вырастет.<br>
+<br>
+На самом деле алгоритм выбрал 30 тем как суть обсуждений, но все они сводятся в итоге к трем посылам (метки 0,1,2 в таблице): все плохо, все стабильно, будет еще лучше. У Сбера.<br>
+
+На данный момент ведется работа над более актуальной для россиян тематикой - связь между обсуждением доллара и последующим изменением курса данной валюты.<br>
+
+
+
+
+	  </p><p style="font-size:120%;"><i>Исходный код проекта - https://github.com/AzamatGainullin/commentskernel_prod.git</i>
+ </p> </div>
+  <div style="float: right; width: 49%;">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ищем по классу ожиданий - 0,1,2">
+  <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Ищем по дате .05. - месяц май">
+  <h3>Таблица неявных ожиданий интернет-сообщества в отношении капитализации Сбера<sup>1</sup></h3>
+
+<p><table border="0" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th style = "background-color: #FFFFFF;font-family: Century Gothic, sans-serif;font-size: 18px;color: #305496;text-align: center;border-bottom: 2px solid #305496;padding: 0px 20px 0px 0px;width: auto">Ожидания по Сберу</th>
+      <th style = "background-color: #FFFFFF;font-family: Century Gothic, sans-serif;font-size: 18px;color: #305496;text-align: center;border-bottom: 2px solid #305496;padding: 0px 20px 0px 0px;width: auto">Ожидания по доллару</th>
+      <th style = "background-color: #FFFFFF;font-family: Century Gothic, sans-serif;font-size: 18px;color: #305496;text-align: center;border-bottom: 2px solid #305496;padding: 0px 20px 0px 0px;width: auto">дата</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">0</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">24.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">25.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">26.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">27.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">28.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">31.05.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">01.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">02.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">03.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">04.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">07.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">08.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">09.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">10.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">11.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">14.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">15.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">16.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">17.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">18.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">21.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">22.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">23.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">24.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">25.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">0</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">28.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">29.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">2</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">30.06.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: #D9E1F2;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">01.07.2021</td>
+    </tr>
+    <tr>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">1</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">скоро...</td>
+      <td style = "background-color: white; color: black;font-family: Century Gothic, sans-serif;font-size: 18px;text-align: center;padding: 0px 20px 0px 0px;width: auto">02.07.2021</td>
+    </tr>
+  </tbody>
+</table></p>
+
+  <h4><i><sup>1</sup>P.S. Ожидания неявны (неочевидны) для сторонних наблюдателей. Нейронная сеть вычленяет из потока слов связь между вербализованными ожиданиями и изменением капитализации.</i></h4>
+  </div><div class="clear">
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementsByClassName("dataframe")[0];
+  //table = document.getElementById("myTable");
+  //table = document.getElementsByTagName('tbody')[0];
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function myFunction2() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementsByClassName("dataframe")[0];
+  //table = document.getElementById("myTable");
+  //table = document.getElementsByTagName('tbody')[0];
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+</script>
+ </body>
+</html>
