@@ -67,8 +67,8 @@
 	  </p><p style="font-size:120%;"><i>Исходный код проекта - https://github.com/AzamatGainullin/commentskernel_prod.git</i>
  </p> </div>
   <div style="float: right; width: 49%;">
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Ищем по классу ожиданий - 0,1,2">
-  <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Ищем по дате .05. - месяц май">
+  <input type="text" id="myInput" onkeypress="myFunction()" placeholder="Фильтр по классу - 0,1,2">
+  <input type="text" id="myInput2" onkeypress="myFunction()" placeholder="Фильтр по дате, н-р .05 - месяц май">
   <h3>Таблица неявных ожиданий интернет-сообщества в отношении капитализации Сбера<sup>1</sup></h3>
 
 <p><table border="0" class="dataframe">
@@ -238,9 +238,11 @@
 <script>
 function myFunction() {
   // Declare variables
-  var input, filter, table, tr, td, i;
+  var input, input2, filter, filter2, table, tr, td, td2, i;
   input = document.getElementById("myInput");
+  input2 = document.getElementById("myInput2");
   filter = input.value.toUpperCase();
+  filter2 = input2.value.toUpperCase();
   table = document.getElementsByClassName("dataframe")[0];
   //table = document.getElementById("myTable");
   //table = document.getElementsByTagName('tbody')[0];
@@ -249,31 +251,9 @@ function myFunction() {
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-function myFunction2() {
-  // Declare variables
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput2");
-  filter = input.value.toUpperCase();
-  table = document.getElementsByClassName("dataframe")[0];
-  //table = document.getElementById("myTable");
-  //table = document.getElementsByTagName('tbody')[0];
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+	td2 = tr[i].getElementsByTagName("td")[2];
+    if (td && td2) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1 && td2.innerHTML.toUpperCase().indexOf(filter2) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
