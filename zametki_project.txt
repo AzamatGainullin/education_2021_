@@ -4,8 +4,9 @@ http://pythontutor.com/visualize.html#mode=edit
 
 Ищем в текущей директории все файлы питона, содержащие данное слово/переменную "models":
 $ grep -rin --include="*.py" "models"
+$ find . –name "*.mp3"  - поиск файлов по маске имени
 
-scp /home/board/Загрузки/test_citilink.7z sammy@138.201.200.157:/home/sammy/
+scp /home/board/energo.xlsx sammy@138.201.200.157:/home/sammy/
 
 
 echo $SHELL - видим что за командная оболочка на сервере, консоль. у меня bash.
